@@ -26,7 +26,7 @@ void main() {
   );
 
   test(
-    'search donor found when a call to data source is success',
+    'products found when a call to data source is success',
     () async {
       // Arrange
       when(mockGetProductsDataSource.getProducts())
