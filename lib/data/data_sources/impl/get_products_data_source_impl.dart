@@ -16,6 +16,9 @@ class GetProductsDataSourceImpl extends GetProductsDataSource {
       Uri.parse('http:localhost:8080/api/get_products'),
     );
 
+    print('response.statusCode = ${response.statusCode}');
+    print('response.body = ${response.body}');
+
     if (response.statusCode == 200) {
       var responseEntity = ResponseEntity.fromJson(jsonDecode(response.body));
       if (responseEntity.success != 1 &&

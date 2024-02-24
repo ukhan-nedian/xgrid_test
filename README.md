@@ -1,16 +1,19 @@
-# xgrid_test
+Assumptions:
 
-A new Flutter project.
+Url = http:localhost:8080/api/get_products
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Blockage:
+
+I neither had the physical device nor emulator running, so I had to write the non-UI code along with unit tests.
+
+
+
+
+
+Why it was not completed?
+
+Because my laptop was running out of battery and was lagging very much so I had to submit the test.  

@@ -31,9 +31,7 @@ void main() {
   test('get products success when the response code is 200', () async {
     // Arrange
     when(
-      mockHttpClient.get(
-        Uri.parse('http:localhost:8080/api/get_products'),
-      ),
+      mockHttpClient.get(Uri.parse('http:localhost:8080/api/get_products')),
     ).thenAnswer(
       (_) async => http.Response(
         readJson('helpers/dummy_data/Mobile-Task-API-Response.json'),
@@ -43,6 +41,7 @@ void main() {
     // Act
     try {
       final ResponseEntity result = await getProductsDataSource.getProducts();
+      print('result = $result');
 
       // Assert
       expect(result, isA<ResponseEntity>());
@@ -72,34 +71,4 @@ void main() {
       expect(e, isA<ServerException>());
     }
   });
-
-  test(
-    'search donor throws ApiException when the statusCode is not 200',
-    () async {
-      // Arrange
-      when(
-        mockHttpClient.get(
-          Uri.parse('http:localhost:8080/api/get_products'),
-        ),
-      ).thenAnswer(
-        (_) async => http.Response(
-          readJson(
-            'helpers/dummy_data/dummy_failed_search_donor_response.json',
-          ),
-          200,
-        ),
-      );
-
-      // Act
-      try {
-        final ResponseEntity result = await getProductsDataSource.getProducts();
-
-        // Assert
-        expect(result, isA<ResponseEntity>());
-      } catch (e) {
-        // Assert
-        expect(e, isA<ApiException>());
-      }
-    },
-  );
 }
