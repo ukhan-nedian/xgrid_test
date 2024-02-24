@@ -13,7 +13,7 @@ import '../../helpers/test_helper.mocks.dart';
 
 void main() {
   late MockHttpClient mockHttpClient;
-  late GetProductsDataSource getProductsDataSource;
+  late GetProductsRemoteDataSource getProductsRemoteDataSource;
 
   final ResponseEntity testResponseEntity = ResponseEntity(
     success: 1,
@@ -25,7 +25,7 @@ void main() {
 
   setUp(() {
     mockHttpClient = MockHttpClient();
-    getProductsDataSource = GetProductsDataSourceImpl(client: mockHttpClient);
+    getProductsRemoteDataSource = GetProductsDataSourceImpl(client: mockHttpClient);
   });
 
   test('get products success when the response code is 200', () async {
@@ -40,7 +40,7 @@ void main() {
     );
     // Act
     try {
-      final ResponseEntity result = await getProductsDataSource.getProducts();
+      final ResponseEntity result = await getProductsRemoteDataSource.getProducts();
       print('result = $result');
 
       // Assert
@@ -62,7 +62,7 @@ void main() {
 
     // Act
     try {
-      final ResponseEntity result = await getProductsDataSource.getProducts();
+      final ResponseEntity result = await getProductsRemoteDataSource.getProducts();
 
       // Assert
       expect(result, isA<ResponseEntity>());

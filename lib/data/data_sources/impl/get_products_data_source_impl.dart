@@ -5,7 +5,7 @@ import 'package:xgrid_test/constants/exception.dart';
 import 'package:xgrid_test/data/data_sources/get_products_data_source.dart';
 import 'package:xgrid_test/domain/entities/ResponseEntity.dart';
 
-class GetProductsDataSourceImpl extends GetProductsDataSource {
+class GetProductsDataSourceImpl extends GetProductsRemoteDataSource {
   final http.Client client;
 
   GetProductsDataSourceImpl({required this.client});
